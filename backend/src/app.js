@@ -4,8 +4,11 @@ require('dotenv').config();
 require("./config/db")
 const app = express();
 app.use(cors({
-    origin: "http://localhost:5173"
-}));
+    origin: [
+        "http://localhost:5173",
+        "https://edu-manage-p2vp-tawny.vercel.app"
+    ]
+}))
 app.use(express.json());
 
 app.get('/', (req, res) => {
